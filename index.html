@@ -1,13 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MIPS R-Type Instruction Encoder</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>MIPS R-Type Instruction Encoder</h1>
+    <!-- Header Section -->
+    <header>
+        <h1>MIPS R-Type Instruction Encoder</h1>
+    </header>
+
+    <!-- Input Area -->
+    <section class="input-area">
+        <h2>Instruction Input</h2>
+
+        <label for="instruction">Select Instruction:</label>
+        <select id="instruction">
+            <option value="add">ADD</option>
+            <option value="sub">SUB</option>
+            <option value="and">AND</option>
+            <option value="or">OR</option>
+            <option value="slt">SLT</option>
+        </select>
+
+        <br><br>
+
+        <label for="rs">RS Register:</label>
+        <input type="text" id="rs" placeholder="Example: $t0">
+
+        <br><br>
+
+        <label for="rt">RT Register:</label>
+        <input type="text" id="rt" placeholder="Example: $t1">
+
+        <br><br>
+
+        <label for="rd">RD Register:</label>
+        <input type="text" id="rd" placeholder="Example: $t2">
+
+        <br><br>
+
+        <button type="button">Encode Instruction</button>
+    </section>
+
+    <!-- Result Area -->
+    <section class="result-area">
+        <h2>Encoding Results</h2>
+
+        <p>Binary Output:</p>
+        <div class="output">Binary result will appear here</div>
+
+        <p>Hexadecimal Output:</p>
+        <div class="output">Hex result will appear here</div>
+    </section>
 
 </body>
 </html>
