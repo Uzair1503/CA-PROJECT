@@ -6,86 +6,177 @@
 
 body {
     margin: 0;
-    padding: 24px;
+    padding: 30px 20px;
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
+    background-color: #f1f5f9;
+    color: #1e293b;
 }
 
-/* Header */
+/* Header Section */
 header {
-    max-width: 900px;
-    margin: 0 auto 24px;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #d9dee5;
-    border-radius: 8px;
+    max-width: 950px;
+    margin: 0 auto 25px;
+    padding: 30px 20px;
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 10px;
     text-align: center;
 }
 
 header h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+header p {
     margin: 0;
-    font-size: 28px;
+    font-size: 15px;
+    color: #dbeafe;
 }
 
-/* Input Area */
-.input-area {
-    max-width: 900px;
-    margin: 0 auto 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #d9dee5;
-    border-radius: 8px;
-    min-height: 180px;
+/* Input, Result and Reference Sections */
+.input-area,
+.result-area,
+.reference-area {
+    max-width: 950px;
+    margin: 0 auto 25px;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
-.input-area h2 {
+h2 {
     margin-top: 0;
-    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    font-size: 22px;
 }
 
-input,
-select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+h3 {
+    margin-top: 22px;
+    margin-bottom: 12px;
+    font-size: 17px;
+    color: #334155;
 }
 
-/* Result Area */
-.result-area {
-    max-width: 900px;
-    margin: 0 auto 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #d9dee5;
-    border-radius: 8px;
-    min-height: 140px;
+/* Labels and Input Fields */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-.result-area h2 {
-    margin-top: 0;
-    font-size: 20px;
+select,
+input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 14px;
+    color: #1e293b;
 }
 
-/* Output */
-.output {
-    padding: 12px;
-    background-color: #f0f2f5;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow-wrap: anywhere;
+select:focus,
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
 }
 
-/* Button */
+/* Register Selection Layout */
+.register-inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 15px;
+}
+
+/* Encode Button */
 button {
-    padding: 10px 18px;
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-top: 5px;
     background-color: #2563eb;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 button:hover {
     background-color: #1d4ed8;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #dbe2ea;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Output Areas */
+.output {
+    padding: 15px;
+    min-height: 45px;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .input-area,
+    .result-area,
+    .reference-area {
+        padding: 17px;
+    }
+
+    .register-inputs {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    th,
+    td {
+        padding: 9px 5px;
+        font-size: 12px;
+    }
 }
