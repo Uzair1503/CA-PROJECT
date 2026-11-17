@@ -14,6 +14,7 @@
     <!-- Header Section -->
     <header>
         <h1>MIPS R-Type Instruction Encoder</h1>
+        <p>Convert MIPS R-Type instructions into machine code</p>
     </header>
 
     <!-- Input Area -->
@@ -29,35 +30,116 @@
             <option value="slt">SLT</option>
         </select>
 
-        <br><br>
+        <div class="register-inputs">
 
-        <label for="rs">RS Register:</label>
-        <input type="text" id="rs" placeholder="Example: $t0">
+            <div>
+                <label for="rs">RS Register:</label>
+                <select id="rs">
+                    <option value="">Select RS</option>
+                    <option>$zero</option>
+                    <option>$t0</option>
+                    <option>$t1</option>
+                    <option>$t2</option>
+                    <option>$t3</option>
+                    <option>$s0</option>
+                    <option>$s1</option>
+                    <option>$s2</option>
+                    <option>$a0</option>
+                    <option>$a1</option>
+                    <option>$a2</option>
+                </select>
+            </div>
 
-        <br><br>
+            <div>
+                <label for="rt">RT Register:</label>
+                <select id="rt">
+                    <option value="">Select RT</option>
+                    <option>$zero</option>
+                    <option>$t0</option>
+                    <option>$t1</option>
+                    <option>$t2</option>
+                    <option>$t3</option>
+                    <option>$s0</option>
+                    <option>$s1</option>
+                    <option>$s2</option>
+                    <option>$a0</option>
+                    <option>$a1</option>
+                    <option>$a2</option>
+                </select>
+            </div>
 
-        <label for="rt">RT Register:</label>
-        <input type="text" id="rt" placeholder="Example: $t1">
+            <div>
+                <label for="rd">RD Register:</label>
+                <select id="rd">
+                    <option value="">Select RD</option>
+                    <option>$zero</option>
+                    <option>$t0</option>
+                    <option>$t1</option>
+                    <option>$t2</option>
+                    <option>$t3</option>
+                    <option>$s0</option>
+                    <option>$s1</option>
+                    <option>$s2</option>
+                    <option>$a0</option>
+                    <option>$a1</option>
+                    <option>$a2</option>
+                </select>
+            </div>
 
-        <br><br>
+        </div>
 
-        <label for="rd">RD Register:</label>
-        <input type="text" id="rd" placeholder="Example: $t2">
-
-        <br><br>
-
-        <button type="button">Encode Instruction</button>
+        <button type="button" id="encodeButton">
+            Encode Instruction
+        </button>
     </section>
 
     <!-- Result Area -->
     <section class="result-area">
         <h2>Encoding Results</h2>
 
-        <p>Binary Output:</p>
-        <div class="output">Binary result will appear here</div>
+        <div class="field-results">
+            <h3>R-Type Instruction Fields</h3>
 
-        <p>Hexadecimal Output:</p>
-        <div class="output">Hex result will appear here</div>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Binary Value</th>
+                </tr>
+                <tr><td>Opcode</td><td id="opcode">------</td></tr>
+                <tr><td>RS</td><td id="rsResult">-----</td></tr>
+                <tr><td>RT</td><td id="rtResult">-----</td></tr>
+                <tr><td>RD</td><td id="rdResult">-----</td></tr>
+                <tr><td>Shamt</td><td id="shamt">-----</td></tr>
+                <tr><td>Funct</td><td id="funct">------</td></tr>
+            </table>
+        </div>
+
+        <h3>Binary Output</h3>
+        <div class="output" id="binaryOutput">
+            Binary result will appear here
+        </div>
+
+        <h3>Hexadecimal Output</h3>
+        <div class="output" id="hexOutput">
+            Hex result will appear here
+        </div>
+    </section>
+
+    <!-- Function Code Reference -->
+    <section class="reference-area">
+        <h2>R-Type Function Code Reference</h2>
+
+        <table>
+            <tr>
+                <th>Instruction</th>
+                <th>Function Code</th>
+            </tr>
+            <tr><td>ADD</td><td>100000</td></tr>
+            <tr><td>SUB</td><td>100010</td></tr>
+            <tr><td>AND</td><td>100100</td></tr>
+            <tr><td>OR</td><td>100101</td></tr>
+            <tr><td>SLT</td><td>101010</td></tr>
+        </table>
     </section>
 
 </body>
