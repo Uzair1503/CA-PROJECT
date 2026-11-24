@@ -6,107 +6,101 @@
 
 body {
     margin: 0;
-    padding: 30px 20px;
+    padding: 25px;
     font-family: Arial, sans-serif;
-    background-color: #f1f5f9;
-    color: #1e293b;
+    background-color: #f4f6f8;
+    color: #222;
 }
 
 /* Header Section */
 header {
     max-width: 950px;
     margin: 0 auto 25px;
-    padding: 30px 20px;
-    background-color: #1e3a8a;
-    color: white;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #d9dee5;
     border-radius: 10px;
     text-align: center;
 }
 
 header h1 {
     margin: 0 0 10px;
-    font-size: 30px;
+    color: #1e3a5f;
+    font-size: 28px;
 }
 
 header p {
-    margin: 0;
-    font-size: 15px;
-    color: #dbeafe;
+    margin: 6px 0;
+    color: #555;
 }
 
-/* Input, Result and Reference Sections */
-.input-area,
-.result-area,
-.reference-area {
+/* Main Content */
+main {
     max-width: 950px;
-    margin: 0 auto 25px;
+    margin: auto;
+}
+
+/* Input Area */
+.input-area {
+    margin-bottom: 25px;
     padding: 25px;
-    background-color: white;
-    border: 1px solid #dbe2ea;
+    background-color: #ffffff;
+    border: 1px solid #d9dee5;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
-h2 {
+.input-area h2,
+.result-area h2,
+.reference-area h2 {
     margin-top: 0;
-    margin-bottom: 20px;
-    color: #1e3a8a;
-    font-size: 22px;
+    color: #1e3a5f;
 }
 
-h3 {
-    margin-top: 22px;
-    margin-bottom: 12px;
-    font-size: 17px;
-    color: #334155;
+/* Form Groups */
+.form-group {
+    margin-bottom: 18px;
 }
 
-/* Labels and Input Fields */
 label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    font-size: 14px;
 }
 
-select,
-input {
+/* Dropdown Lists */
+select {
     width: 100%;
+    max-width: 350px;
     padding: 11px;
-    margin-bottom: 18px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background-color: white;
-    font-size: 14px;
-    color: #1e293b;
+    font-size: 15px;
+    border: 1px solid #cbd2da;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #222;
 }
 
-select:focus,
-input:focus {
-    outline: none;
+select:focus {
+    outline: 2px solid #93b4f5;
     border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
 }
 
-/* Register Selection Layout */
+/* Register Inputs */
 .register-inputs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 /* Encode Button */
 button {
-    display: block;
-    width: 100%;
-    padding: 13px;
-    margin-top: 5px;
+    margin-top: 10px;
+    padding: 12px 22px;
     background-color: #2563eb;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -116,67 +110,102 @@ button:hover {
     background-color: #1d4ed8;
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
+/* Result Area */
+.result-area {
+    margin-bottom: 25px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #d9dee5;
+    border-radius: 10px;
+}
+
+/* Result Headings */
+.result-area h3 {
+    margin-top: 22px;
+    color: #334155;
+    font-size: 17px;
+}
+
 /* Tables */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 15px;
+    margin-top: 15px;
+    background-color: #ffffff;
 }
 
 th,
 td {
     padding: 12px;
-    border: 1px solid #dbe2ea;
-    text-align: center;
-    font-size: 14px;
+    border: 1px solid #d9dee5;
+    text-align: left;
 }
 
 th {
-    background-color: #1e3a8a;
-    color: white;
+    background-color: #e8eef7;
+    color: #1e3a5f;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: #f8fafc;
 }
 
-/* Output Areas */
+/* Binary and Hexadecimal Output */
 .output {
     padding: 15px;
-    min-height: 45px;
-    background-color: #eff6ff;
-    border: 1px solid #bfdbfe;
+    margin-top: 10px;
+    background-color: #f0f2f5;
+    border: 1px solid #d9dee5;
     border-radius: 6px;
     font-family: monospace;
-    font-size: 14px;
+    font-size: 15px;
     overflow-wrap: anywhere;
+    min-height: 45px;
+}
+
+/* Function Code Reference */
+.reference-area {
+    margin-bottom: 25px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #d9dee5;
+    border-radius: 10px;
 }
 
 /* Mobile Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     body {
-        padding: 15px 10px;
+        padding: 12px;
     }
 
     header h1 {
-        font-size: 23px;
+        font-size: 22px;
+    }
+
+    .register-inputs {
+        grid-template-columns: 1fr;
+        gap: 5px;
     }
 
     .input-area,
     .result-area,
     .reference-area {
-        padding: 17px;
-    }
-
-    .register-inputs {
-        grid-template-columns: 1fr;
-        gap: 0;
+        padding: 16px;
     }
 
     th,
     td {
-        padding: 9px 5px;
-        font-size: 12px;
+        padding: 9px;
+        font-size: 13px;
     }
 }
