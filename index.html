@@ -15,132 +15,220 @@
     <header>
         <h1>MIPS R-Type Instruction Encoder</h1>
         <p>Convert MIPS R-Type instructions into machine code</p>
+        <p>Computer Architecture Lab (SC-402L) | G14 Boys</p>
     </header>
 
-    <!-- Input Area -->
-    <section class="input-area">
-        <h2>Instruction Input</h2>
+    <main>
 
-        <label for="instruction">Select Instruction:</label>
-        <select id="instruction">
-            <option value="add">ADD</option>
-            <option value="sub">SUB</option>
-            <option value="and">AND</option>
-            <option value="or">OR</option>
-            <option value="slt">SLT</option>
-        </select>
+        <!-- Input Area -->
+        <section class="input-area">
+            <h2>Instruction Input</h2>
 
-        <div class="register-inputs">
-
-            <div>
-                <label for="rs">RS Register:</label>
-                <select id="rs">
-                    <option value="">Select RS</option>
-                    <option>$zero</option>
-                    <option>$t0</option>
-                    <option>$t1</option>
-                    <option>$t2</option>
-                    <option>$t3</option>
-                    <option>$s0</option>
-                    <option>$s1</option>
-                    <option>$s2</option>
-                    <option>$a0</option>
-                    <option>$a1</option>
-                    <option>$a2</option>
+            <div class="form-group">
+                <label for="instruction">Select Instruction:</label>
+                <select id="instruction">
+                    <option value="">Select Instruction</option>
+                    <option value="add">ADD</option>
+                    <option value="sub">SUB</option>
+                    <option value="and">AND</option>
+                    <option value="or">OR</option>
+                    <option value="slt">SLT</option>
                 </select>
             </div>
 
-            <div>
-                <label for="rt">RT Register:</label>
-                <select id="rt">
-                    <option value="">Select RT</option>
-                    <option>$zero</option>
-                    <option>$t0</option>
-                    <option>$t1</option>
-                    <option>$t2</option>
-                    <option>$t3</option>
-                    <option>$s0</option>
-                    <option>$s1</option>
-                    <option>$s2</option>
-                    <option>$a0</option>
-                    <option>$a1</option>
-                    <option>$a2</option>
-                </select>
+            <div class="register-inputs">
+
+                <div class="form-group">
+                    <label for="rs">RS Register:</label>
+                    <select id="rs">
+                        <option value="">Select RS</option>
+                        <option value="$zero">$zero</option>
+                        <option value="$at">$at</option>
+                        <option value="$v0">$v0</option>
+                        <option value="$v1">$v1</option>
+                        <option value="$a0">$a0</option>
+                        <option value="$a1">$a1</option>
+                        <option value="$a2">$a2</option>
+                        <option value="$a3">$a3</option>
+                        <option value="$t0">$t0</option>
+                        <option value="$t1">$t1</option>
+                        <option value="$t2">$t2</option>
+                        <option value="$t3">$t3</option>
+                        <option value="$t4">$t4</option>
+                        <option value="$t5">$t5</option>
+                        <option value="$t6">$t6</option>
+                        <option value="$t7">$t7</option>
+                        <option value="$s0">$s0</option>
+                        <option value="$s1">$s1</option>
+                        <option value="$s2">$s2</option>
+                        <option value="$s3">$s3</option>
+                        <option value="$s4">$s4</option>
+                        <option value="$s5">$s5</option>
+                        <option value="$s6">$s6</option>
+                        <option value="$s7">$s7</option>
+                        <option value="$t8">$t8</option>
+                        <option value="$t9">$t9</option>
+                        <option value="$k0">$k0</option>
+                        <option value="$k1">$k1</option>
+                        <option value="$gp">$gp</option>
+                        <option value="$sp">$sp</option>
+                        <option value="$fp">$fp</option>
+                        <option value="$ra">$ra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rt">RT Register:</label>
+                    <select id="rt">
+                        <option value="">Select RT</option>
+                        <option value="$zero">$zero</option>
+                        <option value="$at">$at</option>
+                        <option value="$v0">$v0</option>
+                        <option value="$v1">$v1</option>
+                        <option value="$a0">$a0</option>
+                        <option value="$a1">$a1</option>
+                        <option value="$a2">$a2</option>
+                        <option value="$a3">$a3</option>
+                        <option value="$t0">$t0</option>
+                        <option value="$t1">$t1</option>
+                        <option value="$t2">$t2</option>
+                        <option value="$t3">$t3</option>
+                        <option value="$t4">$t4</option>
+                        <option value="$t5">$t5</option>
+                        <option value="$t6">$t6</option>
+                        <option value="$t7">$t7</option>
+                        <option value="$s0">$s0</option>
+                        <option value="$s1">$s1</option>
+                        <option value="$s2">$s2</option>
+                        <option value="$s3">$s3</option>
+                        <option value="$s4">$s4</option>
+                        <option value="$s5">$s5</option>
+                        <option value="$s6">$s6</option>
+                        <option value="$s7">$s7</option>
+                        <option value="$t8">$t8</option>
+                        <option value="$t9">$t9</option>
+                        <option value="$k0">$k0</option>
+                        <option value="$k1">$k1</option>
+                        <option value="$gp">$gp</option>
+                        <option value="$sp">$sp</option>
+                        <option value="$fp">$fp</option>
+                        <option value="$ra">$ra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rd">RD Register:</label>
+                    <select id="rd">
+                        <option value="">Select RD</option>
+                        <option value="$zero">$zero</option>
+                        <option value="$at">$at</option>
+                        <option value="$v0">$v0</option>
+                        <option value="$v1">$v1</option>
+                        <option value="$a0">$a0</option>
+                        <option value="$a1">$a1</option>
+                        <option value="$a2">$a2</option>
+                        <option value="$a3">$a3</option>
+                        <option value="$t0">$t0</option>
+                        <option value="$t1">$t1</option>
+                        <option value="$t2">$t2</option>
+                        <option value="$t3">$t3</option>
+                        <option value="$t4">$t4</option>
+                        <option value="$t5">$t5</option>
+                        <option value="$t6">$t6</option>
+                        <option value="$t7">$t7</option>
+                        <option value="$s0">$s0</option>
+                        <option value="$s1">$s1</option>
+                        <option value="$s2">$s2</option>
+                        <option value="$s3">$s3</option>
+                        <option value="$s4">$s4</option>
+                        <option value="$s5">$s5</option>
+                        <option value="$s6">$s6</option>
+                        <option value="$s7">$s7</option>
+                        <option value="$t8">$t8</option>
+                        <option value="$t9">$t9</option>
+                        <option value="$k0">$k0</option>
+                        <option value="$k1">$k1</option>
+                        <option value="$gp">$gp</option>
+                        <option value="$sp">$sp</option>
+                        <option value="$fp">$fp</option>
+                        <option value="$ra">$ra</option>
+                    </select>
+                </div>
+
             </div>
 
-            <div>
-                <label for="rd">RD Register:</label>
-                <select id="rd">
-                    <option value="">Select RD</option>
-                    <option>$zero</option>
-                    <option>$t0</option>
-                    <option>$t1</option>
-                    <option>$t2</option>
-                    <option>$t3</option>
-                    <option>$s0</option>
-                    <option>$s1</option>
-                    <option>$s2</option>
-                    <option>$a0</option>
-                    <option>$a1</option>
-                    <option>$a2</option>
-                </select>
+            <button type="button" id="encodeButton">
+                Encode Instruction
+            </button>
+        </section>
+
+        <!-- Result Area -->
+        <section class="result-area">
+            <h2>Encoding Results</h2>
+
+            <div class="field-results">
+                <h3>R-Type Instruction Fields</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Binary Value</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td>Opcode</td><td id="opcode">------</td></tr>
+                            <tr><td>RS</td><td id="rsResult">-----</td></tr>
+                            <tr><td>RT</td><td id="rtResult">-----</td></tr>
+                            <tr><td>RD</td><td id="rdResult">-----</td></tr>
+                            <tr><td>Shamt</td><td id="shamt">-----</td></tr>
+                            <tr><td>Funct</td><td id="funct">------</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-        </div>
+            <h3>32-bit Binary Output</h3>
+            <div class="output" id="binaryOutput">
+                Binary result will appear here
+            </div>
 
-        <button type="button" id="encodeButton">
-            Encode Instruction
-        </button>
-    </section>
+            <h3>Hexadecimal Output</h3>
+            <div class="output" id="hexOutput">
+                Hex result will appear here
+            </div>
+        </section>
 
-    <!-- Result Area -->
-    <section class="result-area">
-        <h2>Encoding Results</h2>
+        <!-- Function Code Reference -->
+        <section class="reference-area">
+            <h2>R-Type Function Code Reference</h2>
 
-        <div class="field-results">
-            <h3>R-Type Instruction Fields</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instruction</th>
+                            <th>Function Code</th>
+                        </tr>
+                    </thead>
 
-            <table>
-                <tr>
-                    <th>Field</th>
-                    <th>Binary Value</th>
-                </tr>
-                <tr><td>Opcode</td><td id="opcode">------</td></tr>
-                <tr><td>RS</td><td id="rsResult">-----</td></tr>
-                <tr><td>RT</td><td id="rtResult">-----</td></tr>
-                <tr><td>RD</td><td id="rdResult">-----</td></tr>
-                <tr><td>Shamt</td><td id="shamt">-----</td></tr>
-                <tr><td>Funct</td><td id="funct">------</td></tr>
-            </table>
-        </div>
+                    <tbody>
+                        <tr><td>ADD</td><td>100000</td></tr>
+                        <tr><td>SUB</td><td>100010</td></tr>
+                        <tr><td>AND</td><td>100100</td></tr>
+                        <tr><td>OR</td><td>100101</td></tr>
+                        <tr><td>SLT</td><td>101010</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <h3>Binary Output</h3>
-        <div class="output" id="binaryOutput">
-            Binary result will appear here
-        </div>
+    </main>
 
-        <h3>Hexadecimal Output</h3>
-        <div class="output" id="hexOutput">
-            Hex result will appear here
-        </div>
-    </section>
-
-    <!-- Function Code Reference -->
-    <section class="reference-area">
-        <h2>R-Type Function Code Reference</h2>
-
-        <table>
-            <tr>
-                <th>Instruction</th>
-                <th>Function Code</th>
-            </tr>
-            <tr><td>ADD</td><td>100000</td></tr>
-            <tr><td>SUB</td><td>100010</td></tr>
-            <tr><td>AND</td><td>100100</td></tr>
-            <tr><td>OR</td><td>100101</td></tr>
-            <tr><td>SLT</td><td>101010</td></tr>
-        </table>
-    </section>
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
